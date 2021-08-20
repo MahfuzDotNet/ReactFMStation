@@ -9,7 +9,6 @@ import imageEllipse from '../css/assets/switch.png';
 const AddStation = () => {
 
   let station = {} as IStation;
-
   const { addNewStation } = useContext(StationContext);
   const [newStation, setNewStation] = useState(station);
   const [addStation, setAddStation] = useState(Boolean);
@@ -21,10 +20,10 @@ const AddStation = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
     console.log('station-- ' + JSON.stringify(station));
-    if(addNewStation(newStation)){
+    if (addNewStation(newStation)) {
       setAddStation(true);
       setNewStation({
-        id:"",
+        id: "",
         stationName: "",
         stationBand: ""
       });
@@ -33,7 +32,7 @@ const AddStation = () => {
     else {
       setAddStation(false);
       setNewStation({
-        id:"",
+        id: "",
         stationName: "",
         stationBand: ""
       });
@@ -41,9 +40,9 @@ const AddStation = () => {
   }
 
   useEffect(() => {
-      setTimeout(() => {
-        setAddStation(false);
-      }, 8000);
+    setTimeout(() => {
+      setAddStation(false);
+    }, 8000);
   });
 
   return (
@@ -63,10 +62,10 @@ const AddStation = () => {
 
         <div className="putin-fm">
           <div className="success">{addStation &&
-        <h2>
-         Station added successfully!
-        </h2>
-      }</div>
+            <h2>
+              Station added successfully!
+            </h2>
+          }</div>
           <Form onSubmit={handleSubmit}>
             <Form.Row>
               <Form.Group controlId="formGridStationName">

@@ -58,7 +58,7 @@ const StationProvider: FC = ({ children }) => {
     }
 
     const appendStation = async (addStation: IStation) => {
-      let response =  await axios.post('http://localhost:4000/createstation', addStation)
+        let response = await axios.post('http://localhost:4000/createstation', addStation)
             .then((response: any) => {
                 console.log(response);
                 console.log(response.data);
